@@ -32,6 +32,12 @@ def fiw n
 		1 => 'ONE'
 	}
 	space = ''
+	if n.to_s[0] == '-'
+		space = 'NEGATIVE '
+		n = n.to_s
+		n[0] = ''
+		n = n.to_i
+	end
 	numbers_words.each do |number, word|
 		if n == 0
 			return space
